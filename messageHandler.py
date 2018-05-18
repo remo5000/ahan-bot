@@ -59,7 +59,7 @@ def chainwax(bot, update):
     return buzzword(bot, update) | triggered(bot, update) | food(bot, update)
 
 bot = get_bot()
-updater = Updater(token=get_api_key())
+updater = Updater(token=api_key)
 dispatcher = updater.dispatcher
 echo_handler = MessageHandler((Filters.text), chainwax)
 dispatcher.add_handler(echo_handler)
