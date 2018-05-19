@@ -20,9 +20,8 @@ def find_and_select_random(bot, update, keywords, replies):
     message_content = update.message.text.lower()
     if message_content in keywords:
         bot.send_message(chat_id=update.message.chat_id, text=random.choice(replies))
-        return False
-    return True
-
+        return True
+    return False
 
 def buzzword(bot, update):
     print("buzzword")
@@ -38,7 +37,7 @@ def food(bot, update):
 
 def chainwax(bot, update):
     print("chainwax")
-    return buzzword(bot, update) and triggered(bot, update) and food(bot, update)
+    return buzzword(bot, update) or triggered(bot, update) or food(bot, update)
 
 bot = get_bot()
 updater = Updater(token=api_key)
