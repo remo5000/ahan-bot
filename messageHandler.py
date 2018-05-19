@@ -10,11 +10,11 @@ tech_buzzwords = ["ar", "vr", "blockchain", "crypto", \
         "machine learning", "cloud", "HD"]
 tech_buzzwords_reply = ["AR VR BLOCKCHAIN CRYTO CLOUD MACHINE LEARNING HHHHHHHHHD PORRRRNNNNNN!!!!!"]
 
-triggers = ["ahan", "stfu", "stfu ahan"]
-trigger_replies = ["dohohohoooont be a fucker lah OUI", "LULZ", "fk youuuu LULZ jk luv <3", "thx bb xoxo", "BODOH LA U"]
+triggers = ["ahan", "stfu", "fucker", "bodoh", "cheebai", "cb", "nabei"]
+trigger_replies = ["dohohohoooont be a fucker lah OUI", "LULZ", "lub u long time <333", "thx bb xoxo", "BODOH LA U", "YEEHEEEHEEEEEE"]
 
 food_words = ["supper", "ameens", "macs", "cheese", "fries", "ordering"]
-food_replies = ["so ameens???", "you noe what time it is right", "save some cheese fries for me plez <333", "CHEEEESE FRIES", "now we HAVE to order", "fuck that, anyone wnna eat some MALA???"]
+food_replies = ["so ameens???", "you noe what time it is right", "save some cheese fries for me plez <333", "CHEEEESE FRIES", "now we HAVE to order", "fuck that, anyone wnna eat some MALA???", "MCSPICYYY YEEEHHEEEEE"]
 
 def find_and_select_random(bot, update, keywords, replies):
     message_content = [w.lower() for w in update.message.text.split()]
