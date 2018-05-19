@@ -1,7 +1,7 @@
 from credentials import *
 from init import *
 
-from random import randint
+import random
 
 from telegram.ext import Updater
 from telegram.ext import MessageHandler, Filters
@@ -17,33 +17,16 @@ food_words = ["supper", "ameens", "macs", "cheese", "fries", "ordering"]
 food_replies = ["so ameens???", "you noe what time it is right", "save some cheese fries for me plez <333", "CHEEEESE FRIES", "now we HAVE to order", "fuck that, anyone wnna eat some MALA???"]
 
 def find_and_select_random(bot, update, keywords, replies):
-    print("fns")
-    # words = [w.lower() for w in update.message.text.split()]
-    print(words)
-    # for message_word in words:
-        # print(message_word)
-    for keyword in keywords:
-        print(keyword)
-        if keyword in update.message.text.lower():
-            print("found match, chat " + update.message.chat_id)
-            bot.send_message(chat_id=update.message.chat_id, \
-                text=replies[randint(0, replies.length - 1)])
-            return true
-    return false
+    message_content = update.message.text.lower()
+    if message_content in keywords:
+        bot.send_message(chat_id=update.message.chat_id, text=random.choice(replies))
+        return False
+    return True
 
 
-# only one reply
 def buzzword(bot, update):
     print("buzzword")
     return find_and_select_random(bot, update, tech_buzzwords, tech_buzzwords_reply)
-    # words = update.message.text.split()
-    # for message_word in words:
-    #     for buzzword in tech_buzzwords:
-    #         if buzzword.lower() in message_word:
-    #             bot.send_message(chat_id=update.message.chat_id, \
-    #                 text=tech_buzzwords_reply)
-    #             return true
-    # return false
 
 def triggered(bot, update):
     print("triggered")
@@ -53,10 +36,9 @@ def food(bot, update):
     print("food")
     return find_and_select_random(bot, update, food_words, food_replies)
 
-
 def chainwax(bot, update):
     print("chainwax")
-    return buzzword(bot, update) | triggered(bot, update) | food(bot, update)
+    return buzzword(bot, update) and triggered(bot, update) and food(bot, update)
 
 bot = get_bot()
 updater = Updater(token=api_key)
