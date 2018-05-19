@@ -17,10 +17,13 @@ food_words = ["supper", "ameens", "macs", "cheese", "fries", "ordering"]
 food_replies = ["so ameens???", "you noe what time it is right", "save some cheese fries for me plez <333", "CHEEEESE FRIES", "now we HAVE to order", "fuck that, anyone wnna eat some MALA???"]
 
 def find_and_select_random(bot, update, keywords, replies):
-    message_content = update.message.text.lower()
-    if message_content in keywords:
-        bot.send_message(chat_id=update.message.chat_id, text=random.choice(replies))
-        return True
+    message_content = [w.lower() for w in update.message.text.split()]
+    for msg_word in message_content:
+        for kw in keywords:
+            if kw in msg_word:
+                print("found match")
+                bot.send_message(chat_id=update.message.chat_id, text=random.choice(replies))
+                return True
     return False
 
 def buzzword(bot, update):
