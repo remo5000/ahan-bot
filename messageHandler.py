@@ -15,7 +15,7 @@ tech_buzzwords = re.compile(r"\bar\b|\bvr\b|\bblockchain\b|\bcrypto\b|\bmachine 
 tech_buzzwords_reply = ["AR VR BLOCKCHAIN CRYTO CLOUD MACHINE LEARNING HHHHHHHHHD PORRRRNNNNNN!!!!!"]
 
 # Generic Ahan
-triggers = re.compile(r"\bstfu\b.*\bahan\b", # removed "stfu ahan" as it is redundant.
+triggers = re.compile(r"\bstfu\b.*\bahan\b|\bfuck\b.*\bahan\b", # removed "stfu ahan" as it is redundant.
                          flags=re.IGNORECASE | re.MULTILINE)
 trigger_replies = ["dohohohoooont be a fucker lah OUI", "LULZ", "fk youuuu LULZ jk luv <3", "thx bb xoxo", "BODOH LA U"]
 
