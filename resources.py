@@ -9,7 +9,7 @@ tech_buzzwords_reply = ["AR VR BLOCKCHAIN CRYTO CLOUD MACHINE LEARNING HHHHHHHHH
 # Generic Ahan
 triggers = re.compile(r"\bstfu\b.*\bahan\b|\bfuck\b.*\bahan\b",
                       flags=re.IGNORECASE | re.MULTILINE)
-trigger_replies = ["dohohohoooont be a fucker lah OUI", "LULZ", "fk youuuu LULZ jk luv <3", "thx bb xoxo", "BODOH LA U"]
+trigger_replies = ["dohohohoooont be a fucker lah OUI", "LULZ", "fk youuuu LULZ jk luv <3", "thx bb xoxo", "BODOH LA U", "YEEHEEEEEE"]
 
 # Food / Ameens
 food_words= re.compile(r"\bsupper\b|\ba+m+e+n+[sz]*\b|\bmacs+\b|\bche+se[\s]*fries+\b|\border(ing)?\b|\bma+la+\b", flags=re.IGNORECASE | re.MULTILINE)
