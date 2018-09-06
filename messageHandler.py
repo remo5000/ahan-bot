@@ -20,6 +20,7 @@ def find_and_select_random(bot, update, regex, replies):
     return False
 
 # Calls all the different "reply" functions. To be passed to the echo_handler.
+@lockdown_wrapper
 def chainwax(bot, update):
     # Create helper lambda to take in multiple combinations of triggers and replies.
     helper = lambda regex, replies: find_and_select_random(bot, update, regex, replies)
@@ -30,6 +31,7 @@ def chainwax(bot, update):
           helper(res.food_words, res.food_replies))
 
 # Sets the global lockdown variable
+@lockdown_wrapper
 def security(bot, update):
     # Only works for remo5000
     if update.message.from_user.username != "remo5000":
