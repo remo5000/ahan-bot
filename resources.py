@@ -13,6 +13,8 @@ trigger_replies = ["dohohohoooont be a fucker lah OUI", "LULZ", "fk youuuu LULZ 
                    "YEEHEEEEEE", "thenkz hon <3", "Thenkz man <3"]
 
 # Food / Ameens
-food_words= re.compile(r"\bsupper\b|\ba+m+e+n+[sz]*\b|\bmacs+\b|\bchee+se[\s]*fries+\b|\border(ing)?\b|\bma+la+\b", flags=re.IGNORECASE | re.MULTILINE)
+food_words = re.compile(r"\bsupper\b|\ba+m+e+n+[sz]*\b|\bmacs+\b|\bchee+se[\s]*fries+\b|\border(ing)?\b|\bma+la+\b", flags=re.IGNORECASE | re.MULTILINE)
 food_replies = ["so ameens???", "you noe what time it is right", "save some cheese fries for me plez <333",
                 "CHEEEESE FRIES", "now we HAVE to order", "fuck that, anyone wnna eat some MALA???"]
+
+greetings = re.compile(r"\bh+[e]*+[l]*+[o]*[\s]+ahan\b|\bahan bot\b|\bh[e]*[y]*[\s]*ahan\b|\bwass+up[\s]* ahan\b", flags=re.IGNORECASE | re.MULTILINE)
