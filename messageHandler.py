@@ -27,6 +27,7 @@ def chainwax(bot, update):
     # Prints the re object if matched, else prints False
     print(helper(res.tech_buzzwords, res.tech_buzzwords_reply) or
           helper(res.triggers, res.trigger_replies) or
+          helper(res.greetings, res.greetings_replies) or
           helper(res.food_words, res.food_replies))
 
 # Set up bot to start listening.
