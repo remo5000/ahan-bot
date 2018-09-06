@@ -17,5 +17,9 @@ food_words = re.compile(r"\bsupper\b|\ba+m+e+n+[sz]*\b|\bmacs+\b|\bchee+se[\s]*f
 food_replies = ["so ameens???", "you noe what time it is right", "save some cheese fries for me plez <333",
                 "CHEEEESE FRIES", "now we HAVE to order", "fuck that, anyone wnna eat some MALA???"]
 
-greetings = re.compile(r"\bh+[e]*+[l]*+[o]*[\s]+ahan\b|\bahan bot\b|\bh[e]*[y]*[\s]*ahan\b|\bwass+up[\s]* ahan\b", flags=re.IGNORECASE | re.MULTILINE)
+greetings = re.compile(r'''\b h+[e]*[l]*[o]*[\s] ahan \b
+                         | \b ahan bot \b
+                         | \b h[e]*[y]* [\s]* ahan \b
+                         | \b wass+up [\s]* ahan \b''', 
+                         flags=re.IGNORECASE | re.MULTILINE | re.VERBOSE)
 greetings_replies = ["masai bruv, masai", "yess bb? <<3", "WWAAPP", "masai gents"]
