@@ -42,12 +42,13 @@ def security(bot, update):
         lockdown = not lockdown
 
 def lockdown_wrapper(func):
-   global lockdown 
-   def wrapped_function(*args, **kwargs):
-       if lockdown:
-           return 
-       else:
-           return func(*args, **kwargs)
+    global lockdown 
+    def wrapped_function(*args, **kwargs):
+        if lockdown:
+            return 
+        else:
+            return func(*args, **kwargs)
+    return lockdown_wrapper
 
 # Set up security stuff in memory
 lockdown = False
