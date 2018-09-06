@@ -35,15 +35,11 @@ def security(bot, update):
     if update.message.from_user.username != "remo5000":
         return 
     message_content = update.message.text
-    regex = re.compile(r"\bahan quit your shit bruv\b")
-    lock = regex.search(message_content)
-    regex = re.compile(r"\bahan resume pls\b")
-    unlock = regex.search(message_content)
+    regex = re.compile(r"\bahan bot bb <3\b")
+    toggle = regex.search(message_content)
     global lockdown
-    if lock:
-        lockdown = True
-    else if unlock:
-        lockdown = False
+    if toggle:
+        lockdown = not lockdown
 
 def lockdown_wrapper(func):
    global lockdown 
