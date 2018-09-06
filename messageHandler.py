@@ -14,7 +14,8 @@ def find_and_select_random(bot, update, regex, replies):
     message_content = update.message.text
     m = regex.search(message_content)
     if m:
-        #time.sleep(random.randint(1, 2)) # Uncomment for input lag.
+        # Input lag
+        time.sleep(random.randint(1, 3))
         bot.send_message(chat_id=update.message.chat_id, text=random.choice(replies))
         return m # Since m is not None or False, it is interpreted as a True.
     return False
