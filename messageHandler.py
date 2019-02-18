@@ -1,26 +1,27 @@
 from credentials import *
 from init import *
 import resources as res
+import re
+from typing import Optional
 
 import random
-import time
 
 from telegram.ext import Updater
 from telegram.ext import MessageHandler, Filters
 
 
 # Main Logic
-def find_and_select_random(bot, update, regex, replies):
-    message_content = update.message.text
-    m = regex.search(message_content)
-    if m:
-        #time.sleep(random.randint(1, 2)) # Uncomment for input lag.
-        bot.send_message(chat_id=update.message.chat_id, text=random.choice(replies))
-        return m # Since m is not None or False, it is interpreted as a True.
-    return False
+def find_and_select_random(message: str, regex: re, replies: [str]) -> Optional[str]:
+    """Tries to match a given regex with a Telegram Update, and chooses a random reply if there is a match."""
+    match = regex.search(message)
+    if match:
+        return random.choice(replies)
+    else:
+        return None
 
-# Calls all the different "reply" functions. To be passed to the echo_handler.
+
 def chainwax(bot, update):
+    """Calls all the different "reply" functions. To be passed to the echo_handler."""
     # Create helper lambda to take in multiple combinations of triggers and replies.
     helper = lambda regex, replies: find_and_select_random(bot, update, regex, replies)
     # Prints the matched string to terminal for debugging.
@@ -29,6 +30,8 @@ def chainwax(bot, update):
           helper(res.triggers, res.trigger_replies) or
           helper(res.food_words, res.food_replies))
 
+    # message_content = update.message.text
+    # bot.send_message(chat_id=update.message.chat_id, text=random.choice(replies))
 # Set up bot to start listening.
 bot = get_bot()
 updater = Updater(token=api_key)
